@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div>Personal Site</div>
+<nav class="navbar">
+  <a class="fragment" href="index.html">Home</a>
+  <a class="fragment" href="schedule.html">Schedule</a>
+  <a class="fragment" href="contact.html">Contact</a>
+</nav>
+
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="left-nav">
+      <div class="profile">
+        <img src="image/myphoto.png" alt="Profile photo" />
+        <div><strong>Abdulaziz Alharthy</strong></div>
+        <div class="quick-links">
+          <a class="fragment" href="index.html#about">About Me</a>
+          <a class="fragment" href="index.html#skills">Skills</a>
+        </div>
+      </div>
+    </aside>
+
+<main class="main">
+  <h1>Contact Me</h1>
+  <div class="contact-form-wrapper">
+    <form method="post" action="https://webhook.site/ca5465bf-4087-4226-ad10-c232669a2dda">
+      <div style="display:grid; gap:16px;">
+        <div>
+          <label for="name">Name (required)</label>
+          <input type="text" id="name" name="name" required placeholder="Your name" />
+        </div>
+
+        <div>
+          <label for="email">Email (optional)</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" />
+        </div>
+
+        <div>
+          <label for="message">Message (required)</label>
+          <textarea id="message" name="message" rows="8" required placeholder="Type your message..."></textarea>
+        </div>
+
+        <fieldset>
+          <legend>Message Type</legend>
+          <label><input type="radio" name="type" value="inquiry" required /> Inquiry</label>
+          <label><input type="radio" name="type" value="complaint" /> Complaint</label>
+        </fieldset>
+
+        <button type="submit" class="button-submit">Send</button>
+      </div>
+    </form>
+    <p style="margin-top:16px; color:var(--muted); font-size:0.9rem;">Tip: form data will be sent to webhook for testing.</p>
+  </div>
+</main>
+
+  </div>
+
+  <footer class="site-footer">© 2025 Abdulaziz Alharthy</footer>
+</body>
+</html>

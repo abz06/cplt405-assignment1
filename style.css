@@ -1,0 +1,226 @@
+:root{
+  --bg: #ffffff;
+  --fg: #0f172a;
+  --muted: #475569;
+  --primary: #2563eb;
+  --accent: #16a34a;
+  --card: rgba(0,0,0,0.04);
+  --border: rgba(0,0,0,0.08);
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; margin:0; color:var(--fg);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg) url("image/background-pa.jpg") repeat fixed;
+  background-size: auto;
+}
+
+a{ color: var(--primary); text-decoration: none; }
+a:hover{ color:#1d4ed8; text-decoration: underline; }
+
+header.site-header{
+  position: sticky; top:0; z-index:1000;
+  background: rgba(255,255,255,0.85); backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner{
+  max-width:1100px; margin:0 auto; padding:10px 16px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.navbar{ display:flex; gap:14px; }
+.navbar a{ padding:8px 10px; border-radius:8px; }
+.navbar a:hover{ background: var(--card); }
+
+.layout{
+  max-width:1100px; margin:20px auto; padding:0 16px;
+  display:grid; grid-template-columns: 260px 1fr; gap:20px;
+  min-height: calc(100vh - 120px);
+}
+.left-nav{
+  background:#fff; border:1px solid var(--border); border-radius:12px; padding:16px;
+  position: sticky; top:76px; height: fit-content;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+}
+.profile{ display:flex; flex-direction:column; align-items:center; gap:10px; }
+.profile img{
+  width:140px; height:140px; object-fit:cover; border-radius:50%;
+  border:3px solid transparent; animation: ring 6s linear infinite;
+}
+@keyframes ring{
+  0%{ border-color:#ef4444; }
+  25%{ border-color:#f59e0b; }
+  50%{ border-color:#22c55e; }
+  75%{ border-color:#06b6d4; }
+  100%{ border-color:#ef4444; }
+}
+
+.quick-links{ margin-top:8px; display:flex; flex-direction:column; gap:6px; width:100%; }
+.quick-links a{ padding:6px 8px; border-radius:8px; color:var(--fg); border:1px dashed var(--border); }
+.quick-links a:hover{ background: rgba(0,0,0,0.04); }
+
+.main{
+  background:#fff; border:1px solid var(--border); border-radius:12px; padding:20px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+}
+.button{ background: var(--primary); color:#fff; padding:10px 14px; border-radius:10px; display:inline-block; }
+.button:hover{ background:#1d4ed8; }
+/* Contact form container */
+.contact-form-wrapper{
+  max-width:600px;
+  margin:0 auto;
+  padding:20px;
+}
+
+/* Form inputs and textarea styling */
+input[type="text"],
+input[type="email"],
+textarea{
+  width:100%;
+  padding:12px 14px;
+  border:2px solid var(--border);
+  border-radius:10px;
+  font-family: inherit;
+  font-size:1rem;
+  transition: border-color .2s ease;
+  background:#fff;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus{
+  outline:none;
+  border-color:var(--accent);   /* green focus */
+}
+
+/* Labels */
+label{
+  display:block;
+  margin-bottom:6px;
+  font-weight:500;
+  color:var(--fg);
+}
+
+/* Fieldset for radio buttons */
+fieldset{
+  border:2px solid var(--border);
+  border-radius:10px;
+  padding:12px;
+  margin:0;
+}
+legend{
+  font-weight:600;
+  color:var(--fg);
+  padding:0 6px;
+}
+fieldset label{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-right:14px;
+  font-weight:normal;
+}
+
+/* Send button green style */
+button[type="submit"],
+.button-submit{
+  width:100%;
+  background:var(--accent);   /* green */
+  color:#fff;
+  padding:12px 16px;
+  border:none;
+  border-radius:10px;
+  font-size:1rem;
+  font-weight:600;
+  cursor:pointer;
+  transition: background-color .2s ease;
+}
+button[type="submit"]:hover,
+.button-submit:hover{
+  background:#15803d;   /* darker green */
+}
+
+footer.site-footer{
+  max-width:1100px; margin:20px auto; padding:12px 16px; color:var(--muted);
+}
+/* Tables */
+table{ width:100%; border-collapse: collapse; border-radius:10px; overflow:hidden; background:#fff; }
+th,td{ border:1px solid var(--border); padding:10px; text-align:left; }
+
+/* Base row striping */
+tbody tr:nth-child(odd){ background:#f8fafc; }
+tbody tr:nth-child(even){ background:#ffffff; }
+
+/* Row hover for all cells */
+tbody tr:nth-child(odd):hover{ background:#dcfce7; }
+tbody tr:nth-child(even):hover{ background:#dbeafe; }
+
+/* Day cells: always light green, never affected by hover */
+td.day-cell,
+tbody tr:hover td.day-cell,
+tbody tr:nth-child(odd):hover td.day-cell,
+tbody tr:nth-child(even):hover td.day-cell{
+  background:#ffffff ;
+  font-weight:600;
+}
+
+
+/* Fragment link special style */
+a.fragment{ color: var(--accent); border-bottom:2px dashed var(--accent); }
+a.fragment:hover{ color:#15803d; border-bottom-color:#15803d; }
+
+/* Responsive */
+@media (max-width: 900px){
+  .layout{ grid-template-columns: 1fr; }
+  .left-nav{ position: static; }
+}
+/* Left nav blocks */
+.section-block { width:100%; margin-top:10px; }
+.section-title { font-size:0.9rem; color:#64748b; margin:6px 0; }
+
+/* Quick links (About, Skills) first */
+.quick-links a{
+  display:block; padding:8px 10px; border-radius:10px;
+  border:2px dashed var(--border); color:var(--fg);
+  background:#fff;
+}
+.quick-links a:hover{ background:#f1f5f9; }
+
+/* Contact list */
+.contact-list{ display:flex; flex-direction:column; gap:6px; }
+.contact-item{
+  display:flex; align-items:center; gap:8px;
+  padding:8px 10px; border-radius:10px; background:#fff;
+  border:1px solid var(--border);
+}
+.contact-item a{ color:var(--fg); }
+.contact-item:hover{ background:#f8fafc; }
+
+/* Simple inline SVG icon size */
+.icon{ width:18px; height:18px; display:inline-block; }
+
+/* LinkedIn icon button at the end */
+.social-row{ display:flex; gap:8px; }
+.social-btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:36px; height:36px; border-radius:10px; background:#0a66c2; color:#fff;
+  border:1px solid rgba(0,0,0,0.1);
+}
+.social-btn:hover{ background:#095aab; }
+
+.social-row{
+  display:flex;
+  justify-content:center; /* center horizontally */
+  gap:8px;
+}
+
+#about h2,
+#skills h2{
+  color: var(--accent);
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+html, body{
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+h1, h2, h3{ font-weight:700; }
